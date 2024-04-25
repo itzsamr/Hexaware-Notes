@@ -9,7 +9,11 @@
     - Egs: AWS, Azure, GCP, IBM Cloud, Salesforce.
 - Renting is best than buying  because you don't have to maintain it.
 - Provides Disaster Management.
+- Types of Scaling:
+  - Horizontal  scaling: Adding more resources to the existing system. Eg: More RAM or CPU.
+  - Vertical scaling: Adding more PCs.
 - Auto Scaling.
+    - Pay  for what you use and only pay when your application.
     - Possibily of DDoS attacks: 
 
 ### OS used in Cloud -> [ Linux ] -> (DevOps People will use.)
@@ -113,7 +117,7 @@ Normalization is essential for several reasons:
 - **How**: Splitting multi-valued attributes into separate columns or rows.
 
       - Don't use row order to convey info.
-      - Keep data types consistent.
+      - Shouldn't mix the data types.
       - Every row needs a unique identifier (Primary Key).
       - Don't repeat groups of data.
 
@@ -287,6 +291,7 @@ This explanation provides an overview of each normalization form, including exam
 #### Conclusion (1NF):
 - By breaking down the repeating groups and organizing the data into separate rows for each item, we have successfully transformed the data into First Normal Form (1NF).
 - Each row now represents a single item in the player's inventory, adhering to the rules of 1NF.
+- Composive Primary Key (Player_ID, Item_Type)
 
 <br>
   

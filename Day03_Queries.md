@@ -229,7 +229,6 @@
     FROM movies
     JOIN boxoffice
     ON movies.id = boxoffice.movie_id;
-
     ```
 
 2. List all movies and their ratings in percent
@@ -239,7 +238,6 @@
     FROM movies
     JOIN boxoffice
     ON movies.id = boxoffice.movie_id;
-
     ```
 
 3. List all movies that were released on even number years
@@ -249,5 +247,118 @@
     FROM movies
     WHERE year % 2 = 0;
     ```
+## SQL Lesson 10: Queries with aggregates (Pt. 1)
 
+1. Find the longest time that an employee has been at the studio
+
+    ```
+    SELECT *, Max(Years_employed) from employees;
+    ```
+
+2. For each role, find the average number of years employed by employees in that role
+
+    ```
+    SELECT Role, AVG(Years_employed) AS Average_Years_Employed
+    FROM employees
+    Group by Role;
+    ```
+
+3. Find the total number of employee years worked in each building
+
+    ```
+    SELECT building, SUM(years_employed) as Total_years_employed
+    FROM employees
+    GROUP BY building;
+    ```
+
+## SQL Lesson 11: Queries with aggregates (Pt. 2)
+
+1. Find the number of Artists in the studio (without a HAVING clause)
+
+    ```
+    SELECT Role, Count(Role) 
+    FROM employees
+    WHERE Role = 'Artist';
+    ```
+
+2. Find the number of Employees of each role in the studio
+
+    ```
+    SELECT role, COUNT(*)
+    FROM employees
+    GROUP BY role;
+    ```
+
+3. Find the total number of years employed by all Engineers
+
+    ```
+    SELECT Role, SUM(Years_employed)
+    FROM employees
+    WHERE Role = 'Engineer';
+    ```
+
+## SQL Lesson 12: Order of execution of a Query
+
+### Exercise 12 — Tasks
+1. Find the number of movies each director has directed
+
+    ```
+    SELECT director, COUNT(id) as No_of_movies_directed
+    FROM movies
+    GROUP BY director;  
+    ```
+
+2. Find the total domestic and international sales that can be attributed to each director
+
+    ```
+    SELECT Director, SUM(Domestic_sales + International_sales)
+    FROM movies
+    JOIN Boxoffice
+    On Movies.id = Boxoffice.movie_id
+    GROUP BY director;
+    ```
+## SQL Lesson 13: Inserting rows
+
+### Exercise 13 — Tasks
+1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+
+    ```
+    INSERT INTO movies VALUES (15, "Toy Story 4", "Samar", 2025, 190);
+    ```
+
+2. Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+
+    ```
+    Insert into Boxoffice
+    Values(15, 8.7, 340000000, 270000000);
+    ```
+
+## SQL Lesson 14: Updating rows
+
+>Tip: Use SELECT query to filter the specific rows, then UPDATE.
+
+### Exercise 14 — Tasks
+1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+
+    ```
+    UPDATE movies
+    SET director = "John Lasseter"
+    WHERE id = 2;
+    ```
+
+2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+
+    ```
+    UPDATE movies
+    SET year = 1999
+    WHERE id = 3;
+    ```
+
+3. Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+
+    ```
+    UPDATE movies
+    SET title = "Toy Story 3", director = "Lee Unkrich"
+    WHERE id = 11;
+    ```
 
