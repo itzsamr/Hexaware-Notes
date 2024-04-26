@@ -3,4 +3,4 @@
 2. DDL
 3. SSMS
 4. Sub- Query
-5. ERD
+5. ER Diagram
