@@ -362,3 +362,62 @@
     WHERE id = 11;
     ```
 
+## SQL Lesson 15: Deleting rows
+
+### Exercise 15 — Tasks
+1. This database is getting too big, lets remove all movies that were released before 2005.
+
+    ```
+    DELETE FROM movies
+    where year < 2005;
+    ```
+
+2. Andrew Stanton has also left the studio, so please remove all movies directed by him.
+
+    ```
+    DELETE FROM movies
+    Where Director = "Andrew Stanton";
+    ```
+
+## SQL Lesson 16: Creating tables
+
+DataTypes : FLOAT - 3, Double - 6, REAL - 12
+
+### Exercise 16 — Tasks
+
+1. Create a new table named Database with the following columns:
+– Name A string (text) describing the name of the database
+– Version A number (floating point) of the latest version of this database
+– Download_count An integer count of the number of times this database was downloaded
+This table has no constraints.
+
+    ```
+    CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+    );
+    ```
+
+## SQL Lesson 17: Altering tables
+
+### Exercise 17 — Tasks
+1. Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in. ✓
+2. Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+
+## SQL Lesson 18: Dropping tables
+
+### Exercise 18 — Tasks
+1. We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+
+    ```
+    DROP TABLE Movies;
+    ```
+
+2. And drop the BoxOffice table as well
+
+    ```
+    DROP TABLE BoxOffice;
+    ```
+
+
