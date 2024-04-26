@@ -97,6 +97,100 @@ Where purch_amt > (
     WHERE customer_id = customer_id
 );
 
+-- Task 7
+-- Write a query to find all orders attributed to a salesman in Paris
+SELECT *
+FROM orders
+WHERE salesman_id in (
+					SELECT salesman_id 
+					FROM salesman 
+					WHERE city = 'Paris'
+					);
+
+
+CREATE TABLE customer (
+    customer_id INT PRIMARY KEY,
+    cust_name VARCHAR(255),
+    city VARCHAR(255),
+    grade INT NULL,
+    salesman_id INT
+);
+INSERT INTO customer (customer_id, cust_name, city, grade, salesman_id) VALUES
+(3002, 'Nick Rimando', 'New York', 100, 5001),
+(3005, 'Graham Zusi', 'California', 200, 5002),
+(3001, 'Brad Guzan', 'London', NULL, 5005),
+(3004, 'Fabian Johns', 'Paris', 300, 5006),
+(3007, 'Brad Davis', 'New York', 200, 5001),
+(3009, 'Geoff Camero', 'Berlin', 100, 5003),
+(3008, 'Julian Green', 'London', 300, 5002),
+(3003, 'Jozy Altidor', 'Moscow', 200, 5007);
+
+
+
+-- Task 8
+-- Write a query to find the name and if of all salesman who had more than on customer
+SELECT *
+FROM salesman
+WHERE salesman_id IN (
+    SELECT salesman_id
+    FROM customer
+    GROUP BY salesman_id
+    HAVING COUNT(customer_id) > 1
+);
+
+-- All & Any
+-- Want all the orders which are greater than the Poojitha's orders
+ 
+SELECT * 
+FROM orders 
+where purch_amt > All(
+			SELECT purch_amt
+			FROM orders
+			where customer_id = 3005);
+
+--GROUP BY
+SELECT * 
+FROM orders 
+where purch_amt > ANY(
+			SELECT MAX(purch_amt)
+			FROM orders
+			where customer_id = 3005);
+
+-- Task 9
+-- Write a query to display only those customers whose grade are, in fact, higher than every customer in New York.
+--- All or Any
+SELECT *
+FROM customer
+WHERE grade > (
+    SELECT MAX(grade)
+    FROM customer
+    WHERE city = 'New York'
+);
+
+-- Task 10
+-- Write a query to find all orders with an amount smaller than any amount for a customer in London.
+SELECT *
+FROM orders
+WHERE purch_amt < ALL(
+				SELECT MIN(purch_amt)
+				FROM orders
+				WHERE customer_id IN (
+					SELECT customer_id
+					FROM customer
+					WHERE city = 'London'
+					)
+				);
+
+SELECT * FROM customer;
+SELECT * FROM salesman;
+SELECT * FROM orders;
+
+
+
+
+
+
+
 
 
 
