@@ -17,8 +17,9 @@
 3. Difference btw Super Key & Composite Key: In SQL, a super key is a set of one or more attributes (columns) that uniquely identifies a tuple (row) in a relation (table). A composite key, on the other hand, is a specific type of super key consisting of multiple attributes combined to uniquely identify a tuple. So, a composite key is a type of super key, but not all super keys are composite keys.
 
 ### ACID Properties
+
 A Good database is identified by ACID properties.
-A - Atomicity
-C - Consistency
-I - Isolation
-D - Durability
+1. A - Atomicity
+2. C - Consistency
+3. I - Isolation
+4. D - Durability
