@@ -23,3 +23,5 @@ A Good database is identified by ACID properties.
 2. C - Consistency
 3. I - Isolation
 4. D - Durability
+
+> NOSQL is BASE
