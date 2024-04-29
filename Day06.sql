@@ -114,3 +114,88 @@ SELECT AppliedFor FROM Applicants
 EXCEPT
 SELECT Department FROM Employees;
 
+---------------------------
+
+CREATE TABLE Products (
+
+    ProductID INT,
+
+    ProductName VARCHAR(50),
+
+    Category VARCHAR(50),
+
+    InStock CHAR(3)
+
+);
+ 
+INSERT INTO Products (ProductID, ProductName, Category, InStock) VALUES
+
+(1, 'Laptop', 'Electronics', 'Yes'),
+
+(2, 'Smartphone', 'Electronics', 'No'),
+
+(3, 'Coffee Maker', 'Appliances', 'Yes'),
+
+(4, 'Blender', 'Appliances', 'Yes'),
+
+(5, 'T-shirt', 'Apparel', 'No');
+
+CREATE TABLE Orders (
+
+    OrderID INT,
+
+    ProductID INT,
+
+    CustomerName VARCHAR(50),
+
+    Quantity INT
+
+);
+ 
+INSERT INTO Orders (OrderID, ProductID, CustomerName, Quantity) VALUES
+
+(100, 1, 'Alice', 1),
+
+(101, 3, 'Bob', 2),
+
+(102, 2, 'Charlie', 1),
+
+(103, 4, 'Dana', 1),
+
+(104, 3, 'Alice', 1);
+
+-- Task 1
+-- List all distinct products that are either in stock or have been orders.
+
+SELECT * from Orders;
+SELECT * from Products;
+
+SELECT DISTINCT ProductID, ProductName, Category
+FROM (
+    SELECT ProductID, ProductName, Category
+    FROM Products
+    WHERE InStock = 'Yes'    
+    UNION    
+    SELECT p.ProductID, p.ProductName, p.Category
+    FROM Products p
+    INNER JOIN Orders o ON p.ProductID = o.ProductID
+) AS CombinedProducts;
+
+
+Select ProductName from Products where InStock ='Yes'
+Union
+Select ProductName from Products where ProductID In (Select ProductID from orders);
+
+-- Task 2
+- Identify products that are both in stock and have been ordered.
+
+Select ProductName from Products where InStock= 'Yes'
+Intersect
+Select ProductName from Products where ProductID In (Select ProductID from orders);
+
+-- Task 3
+-- Find products that are in stock but have never been ordered.
+
+Select ProductName from Products where InStock = 'Yes'
+Intersect
+Select ProductName from Products where ProductID In (Select ProductID from orders);
