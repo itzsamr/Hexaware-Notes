@@ -54,3 +54,9 @@ select format(ord_date,'dd mm yyyy') from orders;
 SELECT FORMAT(ord_date,'D', 'en-gb' ) FROM orders;
 
 -- Modify the satement - Asking the new user - Top n orders
+DECLARE @t INT = 3;
+SELECT *, FORMAT(ord_date, 'dd MMM yyyy')
+FROM orders 
+Order by purch_amt desc
+    OFFSET 0 ROWS  
+    FETCH NEXT @t ROWS ONLY;
