@@ -60,3 +60,57 @@ FROM orders
 Order by purch_amt desc
     OFFSET 0 ROWS  
     FETCH NEXT @t ROWS ONLY;
+
+-- SET THEORY
+-- UNION
+-- Intersect - common
+-- Except - Difference
+
+CREATE DATABASE setoperations;
+
+USE setoperations;
+
+CREATE TABLE Employees (
+    EmployeeID INT,
+    Name VARCHAR(50),
+    Department VARCHAR(50)
+);
+ 
+INSERT INTO Employees (EmployeeID, Name, Department) VALUES
+(1, 'Alice', 'Engineering'),
+(2, 'Bob', 'Marketing'),
+(3, 'Charlie', 'Engineering'),
+(4, 'Dana', 'HR');
+ 
+ 
+CREATE TABLE Applicants (
+    ApplicantID INT,
+    Name VARCHAR(50),
+    AppliedFor VARCHAR(50)
+);
+ 
+INSERT INTO Applicants (ApplicantID, Name, AppliedFor) VALUES
+(5, 'George', 'Engineering'),
+(6, 'Helen', 'Marketing'),
+(7, 'Ian', 'Marketing'),
+(3, 'Charlie', 'Sales');
+
+-- Intersection
+SELECT Department FROM Employees
+INTERSECT
+SELECT AppliedFor FROM Applicants;
+
+-- Union
+SELECT Department FROM Employees
+UNION
+SELECT AppliedFor FROM Applicants;
+
+-- Except
+SELECT Department FROM Employees
+EXCEPT
+SELECT AppliedFor FROM Applicants;
+
+SELECT AppliedFor FROM Applicants
+EXCEPT
+SELECT Department FROM Employees;
+
