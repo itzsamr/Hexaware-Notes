@@ -12,4 +12,5 @@
 ### Different Types of Keys:
 
 1. Candidate Key - Any key that is can be a contender to become a primary key, which have potential (Unique & Not Null) to be primary key.
+  [Candidate Key = Primary Key U Alternate Key]
 2. 
