@@ -51,24 +51,24 @@
 
 
 # After the 🔑
-message = "    🚨🔍📱🔑secret_code✌️"
-code = "SECRET_CODE✌️"
-
-output = message.upper()[8:]
-
-if (output == code):
-  print("You are an hacker 🎊")
-else:
-  print("Try again")
-
 # message = "    🚨🔍📱🔑secret_code✌️"
 # code = "SECRET_CODE✌️"
 
-# message = message[message.find('🔑')+1:]
-# message = message.upper()
-# print(message)
-# if(message==code):
-#   print('You are an hacker')
+# output = message.upper()[8:]
+
+# if (output == code):
+#   print("You are an hacker 🎊")
+# else:
+#   print("Try again")
+
+message = "    🚨🔍📱🔑secret_code✌️"
+code = "SECRET_CODE✌️"
+
+message = message[message.find('🔑')+1:]
+message = message.upper()
+print(message)
+if(message==code):
+  print('You are an hacker')
 
 
 
