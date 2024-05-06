@@ -7,6 +7,15 @@
 # g2 = 'Cool' if 5 > 7 else 'Super'
 # print(g2)
 
-quote = "Dream"
+# quote = "Dream"
+# quote1 = "Dream is something"
 
-print(quote[1:3])
+# print(quote[-1]) # m
+# print(quote[-4:-1]) # rea
+# print(quote[::-1]) # maerD
+
+# print(quote1[-1:-4:-1]) # gni
+
+
+fun = "madam"
+print(fun == fun[::-1])
