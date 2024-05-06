@@ -55,5 +55,5 @@ for avenger in avengers:
 print(lengths)
 
 # Task 5.2
-lengths = [avenger for avenger in avengers if len(avenger) > 10]
+lengths = [avenger.upper() for avenger in avengers if len(avenger) > 10]
 print(lengths)
