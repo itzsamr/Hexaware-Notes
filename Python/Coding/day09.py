@@ -23,5 +23,6 @@
 # Task 2: Remove junk [*, (] to find the secret
 message1 = "    🚨🔍📱🔑*******secret_code✌️((("
 secret_message = message1.replace("*", "").replace("(", "")[message1.find('🔑')+1:]
-print(secret_message)
+print(secret_message.upper())
+print(len(secret_message))
 
