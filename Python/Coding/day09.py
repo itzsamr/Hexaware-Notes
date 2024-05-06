@@ -17,5 +17,11 @@
 # print(quote1[-1:-4:-1]) # gni
 
 
-fun = "madam"
-print(fun == fun[::-1])
+# fun = "madam"
+# print(fun == fun[::-1])
+
+# Task 2: Remove junk [*, (] to find the secret
+message1 = "    🚨🔍📱🔑*******secret_code✌️((("
+secret_message = message1.replace("*", "").replace("(", "")[message1.find('🔑')+1:]
+print(secret_message)
+
