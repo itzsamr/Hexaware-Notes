@@ -1,6 +1,6 @@
 # function definition?
 def sum(a, b):
-    return a + b
+    a + b
 
 
 print("The sum of a and b is:", sum(8, 10))
