@@ -57,7 +57,7 @@
 # Task 1
 class BankAcc:
 
-    interest_rate = 0.02
+    interest_rate = 0.02 # class variable
 
     def __init__(self, acc_no, name, balance):
         self.acc_no = acc_no
