@@ -70,6 +70,11 @@ class BankAcc:
         else:
             self.balance -= amount
             return f"Withdrawal Successful! Your new balance is ₹.{self.balance:,}"
+    
+    def deposit(self):
+        amount = float(input("How much do you want to Deposit? "))
+        self.balance += amount
+        return f"The new balance is ₹.{self.balance:,}"
 
 amisha = BankAcc(101, "Amisha", 50_000)
 mathesh = BankAcc(102, "Mathesh", 70_000)
@@ -83,4 +88,7 @@ sai = BankAcc(103, "Sai", 65_000)
 # print(amisha.display_balance())
 
 # Task 3
-print(mathesh.withdraw())
+# print(mathesh.withdraw())
+
+#Task 4
+print(mathesh.deposit())
