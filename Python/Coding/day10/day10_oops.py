@@ -52,13 +52,18 @@
 # print(type(ferrari))  # <class '__main__.Car'>
 # print(ferrari.horn())
 
+# Encapsulation: properties + action(logic)
 
 # Task 1
 class BankAcc:
+
+    interest_rate = 0.02
+
     def __init__(self, acc_no, name, balance):
         self.acc_no = acc_no
         self.name = name
         self.balance = balance
+
     
     def display_balance(self):
         return f"The current balance is ₹.{self.balance:,}"
@@ -75,6 +80,10 @@ class BankAcc:
         amount = float(input("How much do you want to Deposit? "))
         self.balance += amount
         return f"The new balance is ₹.{self.display_balance()}"
+    
+    def interest(self):
+        self.balance += self.balance * BankAcc.interest_rate
+        return f"{self.display_balance()}"
 
 
 amisha = BankAcc(101, "Amisha", 50_000)
@@ -92,4 +101,8 @@ sai = BankAcc(103, "Sai", 65_000)
 # print(mathesh.withdraw())
 
 #Task 4
-print(mathesh.deposit())
+# print(sai.deposit())
+
+#Task 5 - interest rate
+print(sai.interest())
+
