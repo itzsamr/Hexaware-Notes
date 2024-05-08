@@ -7,6 +7,10 @@ print("The sum of a and b is:", sum(8, 10))
 
 # Why?: Motivation of function
 
+# Reuse
+# Modularity - multiple smaller functions
+# Change in one place reflects everywhere
+
 
 a = 8
 b = 10
@@ -55,8 +59,8 @@ print(driving_test("Sai Ganesh", 20))
 
 
 # Types of argument
-# 1. Position argument
-# 2. Keyword argument
+# 1. Position argument - first
+# 2. Keyword argument - last
 
 # Position argument
 # print(driving_test(20, "Poojitha"))
