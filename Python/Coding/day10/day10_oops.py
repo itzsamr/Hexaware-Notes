@@ -74,7 +74,8 @@ class BankAcc:
     def deposit(self):
         amount = float(input("How much do you want to Deposit? "))
         self.balance += amount
-        return f"The new balance is ₹.{self.balance:,}"
+        return f"The new balance is ₹.{self.display_balance()}"
+
 
 amisha = BankAcc(101, "Amisha", 50_000)
 mathesh = BankAcc(102, "Mathesh", 70_000)
