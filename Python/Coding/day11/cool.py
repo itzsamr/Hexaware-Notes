@@ -7,5 +7,8 @@ def main():
     print(to_upper_case("Sanjana"))
 
 
+print(__name__)
+
+
 if __name__ == "__main__":
     main()
