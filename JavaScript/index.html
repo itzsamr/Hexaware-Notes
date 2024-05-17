@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Self closing tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      h1 {
+        color: crimson;
+      }
+
+      .title {
+        color: orange;
+      }
+    </style>
   </head>
   <body>
-    <!-- <script src="index.js"></script> -->
-    <script src="loops.js"></script>
-    <h1>Hello World</h1>
+    <h1>Welcome to the app</h1>
+    <h2 id="sub-heading">Welcome to the app</h2>
+    <h3 class="title">Welcome to the app 1</h3>
+    <h4 class="title">Welcome to the app 2</h4>
+    <h5 class="title">Welcome to the app 3</h5>
+    <h6>Welcome to the app</h6>
+
+    <!-- Event listeners: Interactive | onclick - listens for click -->
+    <button onclick="clicked()">Click</button>
+
+    <!-- src - source | linked -->
+    <!-- <script src="fundamentals.js"></script> -->
+    <!-- <script src="basic-loops.js"></script> -->
+    <script>
+      var h2 = document.getElementById("sub-heading");
+      console.log(h2.innerText);
+      h2.innerText = "This is super cool"; // update your html
+
+      var titles = document.getElementsByClassName("title");
+      console.log(titles);
+
+      for (title of titles) {
+        console.log(title.innerText);
+      }
+
+      // Task -  Print the how many times they have clicked on the screen
+      function clicked() {
+        console.log("You clicked the button");
+      }
+    </script>
   </body>
 </html>
 
