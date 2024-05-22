@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Self closing tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      h1 {
-        color: crimson;
-      }
-
-      .title {
-        color: orange;
-      }
-    </style>
+    <title>Javascript Day 1</title>
   </head>
   <body>
-    <h1>Welcome to the app</h1>
-    <h2 id="sub-heading">Welcome to the app</h2>
-    <h3 class="title">Welcome to the app 1</h3>
-    <h4 class="title">Welcome to the app 2</h4>
-    <h5 class="title">Welcome to the app 3</h5>
-    <h6>Welcome to the app</h6>
-
-    <!-- Event listeners: Interactive | onclick - listens for click -->
-    <button onclick="clicked()">Click</button>
-
-    <!-- src - source | linked -->
-    <!-- <script src="fundamentals.js"></script> -->
-    <!-- <script src="basic-loops.js"></script> -->
+    <button onclick="clicked()">Click me</button>
+    <p>Button clicks: <span id="counter">0</span></p>
+    <p>Driving Test checker</p>
+    <input type="text" id="age" placeholder="Enter your age" />
+    <button onclick="checkAge()">Check</button>
+    <p id="result"></p>
     <script>
-      var h2 = document.getElementById("sub-heading");
-      console.log(h2.innerText);
-      h2.innerText = "This is super cool"; // update your html
-
-      var titles = document.getElementsByClassName("title");
-      console.log(titles);
-
-      for (title of titles) {
-        console.log(title.innerText);
-      }
-
-      // Task -  Print the how many times they have clicked on the screen
+      let i = 0;
+      let counter = document.getElementById("counter");
       function clicked() {
-        console.log("You clicked the button");
+        i++;
+        counter.innerText = i;
       }
+
+      let age = document.getElementById("age");
+      let result = document.getElementById("result");
+      function checkAge() {
+        result.innerText =
+          age.value >= 18 ? "You can drive" : "You can't drive";
+      }
+
+      //   console.log("Hello World")
+      //   //   Task
+      //   function movieUrl(domain, genre, year) {
+      //     return "http://" + domain + "?genere=" + genre + "&year=" + year
+      //   }
+
+      // //   const movieUrl2 = (domain, genre, year) => {
+      // //     https://${domain}?genre=${genre}&year=${year}
+      // //   }
+      // function movieUrl2(domain, genre, year) {
+      //     return https://${domain}?genre=${genre}&year=${year}
+      // }
+
+      //   console.log(movieUrl("imdb.com", "thriller", 2020))
+      //   console.log(movieUrl2("imdb.com", "thriller", 2020))
+      //   let t1 = [80, 90];
+      //   let t2 = [50, 60];
+      //   let t3 = [...t1, ...t2];
+      //   console.log(t3);
+      //   //   [80, 90, 50, 60]
+
+      //   //   Math operation
+      //   console.log(Math.max(6, 7, 4)); // Accepts n no. of argument
+
+      //   let heights = [120, 140, 190, 80, 170]; // object
+      //   //   console.log(
+      //   //     Math.max(heights[0], heights[1], heights[2], heights[3], heights[4])
+      //   //   );
+      //   console.log(Math.max(heights)); // NaN
+      //   console.log(Math.max(...heights)); // 190
+
+      //   //   ... rest
+      //   function own_max(...nums) {
+      //     // code
+      //     return nums;
+      //   }
+      //   console.log(own_max(5, 6, 10));
+      //   console.log(own_max(5, 6, 10, 7, 80, 60));
     </script>
   </body>
 </html>
-
-<!-- To create boilerplate code -->
-<!-- !<tab> -->

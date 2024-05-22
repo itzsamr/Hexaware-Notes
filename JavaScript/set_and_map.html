@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const set = new Set();
+      set.add(10);
+      set.add(20);
+      set.add(30);
+
+      set.add(10);
+
+      // unique
+      console.log(set);
+
+      // has
+      console.log(set.has(20));
+
+      // delete
+      set.delete(20);
+      console.log(set, set.size);
+
+      // clear
+      set.clear();
+      console.log(set);
+
+      //   Map -> HashMap | Object + extra methods
+      let student = new Map();
+      student.set("name", "Manju");
+      student.set("age", 20);
+      student.set("company", "Hexaware");
+
+      console.log(student);
+
+      //   Object
+      console.log(student.get("name"));
+      console.log(student.has("name"));
+      console.log(student.delete("company"));
+      console.log(student);
+
+      console.log(student.size);
+    </script>
+  </body>
+</html>
