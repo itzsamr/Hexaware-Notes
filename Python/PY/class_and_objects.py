@@ -1,73 +1,88 @@
-# Class and Object
-class Dog:
-    def __init__(self, name):
-        self.name = name
+# # Class and Object
+# class Dog:
+#     def __init__(self, name):
+#         self.name = name
 
-    def bark(self):
-        return f"{self.name} says woof!"
-
-
-my_dog = Dog("Buddy")
-print(my_dog.bark())
+#     def bark(self):
+#         return f"{self.name} says woof!"
 
 
-# Access Specifiers
-class Example:
-    def __init__(self):
-        self.public = "I am public"
-        self._protected = "I am protected"
-        self.__private = "I am private"
+# my_dog = Dog("Buddy")
+# print(my_dog.bark())
 
 
-e = Example()
-print(e.public)
-print(e._protected)
-# print(e.__private)  # This will raise an AttributeError
+# # Access Specifiers
+# class Example:
+#     def __init__(self):
+#         self.public = "I am public"
+#         self._protected = "I am protected"
+#         self.__private = "I am private"
 
 
-# Constructor
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# e = Example()
+# print(e.public)
+# print(e._protected)
+# # print(e.__private)  # This will raise an AttributeError
 
 
-person = Person("Alice", 30)
-print(person.name, person.age)
+# # Constructor
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
 
 
-# Inheritance
-class Animal:
-    def speak(self):
-        return "Animal speaks"
+# person = Person("Alice", 30)
+# print(person.name, person.age)
 
 
-class Dog(Animal):
-    def speak(self):
-        return "Dog barks"
+# # Inheritance
+# class Animal:
+#     def speak(self):
+#         return "Animal speaks"
 
 
-dog = Dog()
-print(dog.speak())
+# class Dog(Animal):
+#     def speak(self):
+#         return "Dog barks"
+
+
+# dog = Dog()
+# print(dog.speak())
 
 
 # Polymorphism
-class Cat:
-    def sound(self):
-        return "Meow"
+# class Cat:
+#     def sound(self):
+#         return "Meow"
 
 
-class Dog:
-    def sound(self):
-        return "Bark"
+# class Dog:
+#     def sound(self):
+#         return "Bark"
 
 
-def make_sound(animal):
-    print(animal.sound())
+# def make_sound(animal):
+#     print(animal.sound())
 
 
-cat = Cat()
-dog = Dog()
+# cat = Cat()
+# dog = Dog()
 
-make_sound(cat)
-make_sound(dog)
+# make_sound(cat)
+# make_sound(dog)
+
+
+# Method Overriding
+class Parent:
+    def show(self):
+        print("Parent method")
+
+
+class Child(Parent):
+    def show(self):
+        print("Child method")
+
+
+c = Child()
+c.show()
